@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/p4k03n4t0r/GitOps.git
+    targetRevision: HEAD
+    path: hello-world
+
+    # # kustomize specific config
+    # kustomize:
+    #   # Optional kustomize version. Note: version must be configured in argocd-cm ConfigMap
+    #   version: v3.5.4
+    #   # Optional image name prefix
+    #   namePrefix: prod-
+    #   # Optional images passed to "kustomize edit set image".
+    #   images:
+    #   - gcr.io/heptio-images/ks-guestbook-demo:0.2
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+      allowEmpty: false

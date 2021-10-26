@@ -38,3 +38,15 @@ kubectl apply -f hello-world-deployment.yaml
 kubectl apply -f hello-world-service.yaml
 kubectl port-forward svc/hello-world 8081:5000
 ```
+
+## ArgoCD file
+
+
+
+## Bump version in yaml
+
+
+
+## Kustomize
+
+https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
