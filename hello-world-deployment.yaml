@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: ghcr.io/p4k03n4t0r/simpleflaskapplication:main
+        image: ghcr.io/p4k03n4t0r/simpleflaskapplication:v1.0.0
         ports:
         - containerPort: 5000
