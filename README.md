@@ -1,6 +1,8 @@
 # GitOps
 
-## Steps
+This repository contains an example deployment with ArgoCD according to GitOps. The application which is deployed can be found [here](https://github.com/p4k03n4t0r/simpleflaskapplication). The CI of that repository triggers the deployment of ArgoCD, by bumping the version of the application in the deployment.
+
+## Setup
 
 1. Install [go](https://golang.org/doc/install)
 2. Install [docker](https://docs.docker.com/engine/install/)
@@ -31,22 +33,14 @@
     ```
 
 
-## Deploy manually
+## Initial setup of CD
 
+Initial creation of the CD in ArgoCD:
 ```
-kubectl apply -f hello-world-deployment.yaml
-kubectl apply -f hello-world-service.yaml
+kubectl apply -f hello-world-cd.yaml
 kubectl port-forward svc/hello-world 8081:5000
 ```
 
-## ArgoCD file
+## Multiple environments with Kustomize
 
-
-
-## Bump version in yaml
-
-
-
-## Kustomize
-
-https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
+TODO: https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
